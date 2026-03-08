@@ -3,7 +3,8 @@ package types
 import "net/http"
 
 type Ratelimit struct {
-	fn http.HandlerFunc
-	w  http.ResponseWriter
-	r  *http.Request
+	Fn    http.HandlerFunc
+	W     http.ResponseWriter
+	R     *http.Request
+	Limit chan struct{}
 }
